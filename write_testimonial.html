@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_testimonial.css" />
+    <script src="https://kit.fontawesome.com/8661b9af7d.js" crossorigin="anonymous"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <nav id="navbar" class="">
+        <div class="navbar__logo">
+          <a href="./index.html">JUNSOO</a>
+        </div>
+        <ul class="navbar__menu">
+          <li data-to="home" class="navbar__menu__item">home</li>
+          <li data-to="testimonials" class="navbar__menu__item">testimonial</li>
+          <li data-to="contact" class="navbar__menu__item">contact</li>
+        </ul>
+        <!-- toggle button -->
+        <button class="navbar__toggle-btn">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+      </nav>
+      <!-- home -->
+      <section id="home">
+        <div class="home__container">
+          <img class="home__avatar" src="./images/profile.jpg" alt="" />
+          <h1 class="home__title">
+            Hello, <br />
+            I'm Park Junsoo
+          </h1>
+          <h2 class="home__description">
+            백엔드와 프론트엔드를 넘나드는 풀스택 개발자
+          </h2>
+          <button data-to="contact" class="home__button">CONTECT ME</button>
+        </div>
+      </section>
+
+       <!-- testimonials -->
+    <section id="testimonials" class="section">
+        <div class="section_container">
+          <h1>Testimonials</h1>
+          <h3>Please write a recommendation for me.</h3>
+          <div class="testimonials container">
+             <form action="submit_recommendation.php" method="post" enctype="multipart/form-data">
+        <div class="input-group">
+            <label for="photo">프로필 사진</label>
+            <!-- 파일 업로드를 위해 type을 "file"로 변경합니다. -->
+            <input type="file" id="photo" name="photo" required>
+        </div>
+        <div class="input-group">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="input-group">
+            <label for="occupation">관계</label>
+            <input type="text" id="occupation" name="occupation" required>
+        </div>
+        <div class="input-group">
+            <label for="comment">추천사</label>
+            <textarea id="comment" name="comment" rows="6" required></textarea>
+        </div>
+        <button class="btn" type="submit">제출하기</button>
+              
+            </div>
+          </div>
+        </div>
+        <div>
+          
+         
+        </div>
+        
+      </section>
+      <section id="contact" class="section">
+        <h1 class="contact__title">Let's talk</h1>
+        <h2 class="contact__email">jspark9703@gmail.com</h2>
+        <div class="contact__links">
+          <a href="https://github.com/jspark9703" target="blank">
+            <i class="fa fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.instagram.com/jspark3115" target="blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+        <p class="contact__right">
+          copyright Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Perspiciatis, quae!
+        </p>
+      </section>
+</body>
+</html>

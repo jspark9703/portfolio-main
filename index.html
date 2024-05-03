@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JunSoo's portfolio</title>
+    <meta name="desciption" content="" />
+    <meta name="author" content="JunSoo" />
+    <link rel="icon" href="./images/favicon.png" />
+    <script src="https://kit.fontawesome.com/8661b9af7d.js" crossorigin="anonymous"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <!-- nav -->
+    <nav id="navbar" class="">
+      <div class="navbar__logo">
+        <a href="./index.html">JUNSOO</a>
+      </div>
+      <ul class="navbar__menu">
+        <li data-to="home" class="navbar__menu__item">home</li>
+        <li data-to="about" class="navbar__menu__item">intro</li>
+        <li data-to="skills" class="navbar__menu__item">skills</li>
+        <li data-to="work" class="navbar__menu__item">my work</li>
+        <li data-to="testimonials" class="navbar__menu__item">testimonial</li>
+        <li data-to="contact" class="navbar__menu__item">contact</li>
+      </ul>
+      <!-- toggle button -->
+      <button class="navbar__toggle-btn">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </nav>
+    <!-- home -->
+    <section id="home">
+      <div class="home__container">
+        <img class="home__avatar" src="./images/profile.jpg" alt="" />
+        <h1 class="home__title">
+          Hello, <br />
+          I'm Park Junsoo
+        </h1>
+        <h2 class="home__description">
+          백엔드와 프론트엔드를 넘나드는 풀스택 개발자
+        </h2>
+        <button data-to="contact" class="home__button">CONTECT ME</button>
+      </div>
+    </section>
+    <!-- about -->
+    <section id="about" class="section section_container">
+      <h1>About me</h1>
+      <p>
+        <br>
+        HTML, CSS, JavaScript, node.js, python 등 각각의 언어와 기본적인 APIs를 사용하고 이해하고 있습니다.
+        <br>
+        프론트엔드, 백엔드,ML, DB 각각의 역할과 기능, 생태계를 파악하고 있습니다.
+        <br>
+        다양한 프로젝트를 통해 WEB과 DataScience에 대한 전반적인 이해를 통해 급변하는 실무환경에 쉽게 적응할 수 있습니다.
+      </p>
+      <div class="about__majors">
+        <div class="major">
+          <div class="major__icon">
+            <i class="fa fa-html5" aria-hidden="true"></i>
+          </div>
+          <div class="major__title">Front-end</div>
+          <div class="major__description">
+            HTML, CSS, JavaScript
+            <br />React, Flutter, Web APIs
+          </div>
+        </div>
+        <div class="major">
+          <div class="major__icon">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <div class="major__title">Back-end</div>
+          <div class="major__description">
+              Python, Fastapi, firebase, postgreSQL
+          </div>
+        </div>
+        <div class="major">
+          <div class="major__icon">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <div class="major__title">AI</div>
+          <div class="major__description">
+              ML, Python, LangChain, Textmining
+            <br/>
+          </div>
+          <div class="about__learning">
+            <div class="learning">
+              <div class="learning__description">
+                <p class="learning__name"></p>
+                <p class="learning__period"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- skills -->
+    <section id="skills" class="section">
+      <div class="section_container">
+        <h1>Skills</h1>
+        <h2>Skills & Attribute</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
+          aperiam, tempore tenetur ducimus perspiciatis quaerat, deserunt
+          pariatur quisquam cupiditate porro placeat saepe dolorem mollitia
+          sequi corporis veniam asperiores, esse eum?
+        </p>
+        <div class="skillset">
+          <div class="skillset__left">
+            <div class="skillset__title">Skills</div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>HTML, JavaScript, CSS</span>
+                <span>30%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__bar__value" style="width: 30%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>Flutter</span>
+                <span>40%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__bar__value" style="width: 40%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>Python</span>
+                <span>40%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__bar__value" style="width: 40%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>ML</span>
+                <span>30%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__bar__value" style="width: 30%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>Sql</span>
+                <span>10%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__bar__value" style="width: 10%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skillset__right">
+            <div class="tools">
+              <h3 class="skillset__title">Tools</h3>
+              <ul class="tools__list">
+                <li>
+                  <span>Visual Studio Code<br /></span>
+                </li>
+                <li>
+                  <span>Pycharm<br /></span>
+                </li>
+                <li>
+                  <span>Android Studio Code<br /></span>
+                </li>
+              
+              </ul>
+            </div>
+            <div class="etc">
+              <h3 class="skillset__title">Etc</h3>
+              <ul class="etc__list">
+                <li>
+                  <span>Langchain<br /></span>
+                </li>
+                <li>
+                  <span>Git<br /></span>
+                </li>
+                <li>
+                  <span>Web crolling<br /></span>
+                </li>
+                <li>
+                  <span>DataScience<br /></span>
+                </li>
+               
+                <li>
+                  <span>Math<br /></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- work -->
+    <section id="work" class="section">
+      <div class="section_container">
+        <h1>My work</h1>
+        <h3>Projects</h3>
+        <div class="work__categories">
+          <button data-id="all" class="category__btn">
+            All <span class="category__count">4</span>
+          </button>
+          <button data-id="front-end" class="category__btn">
+            Front-end <span class="category__count">4</span>
+          </button>
+          <button data-id="back-end" class="category__btn">
+            Back-end <span class="category__count">4</span>
+          </button>
+          <button data-id="mobile" class="category__btn">
+            Mobile <span class="category__count">4</span>
+          </button>
+          <button data-id="AI" class="category__btn">
+            AI <span class="category__count">4</span>
+          </button>
+        </div>
+        <div class="work__projects">
+          <a data-sort="front-end" href=" https://jspark9703.github.io/hollys" class="project" target="blank">
+            <img class="project__img" src="./images/projects/hollys.jpg" alt="" />
+            <div class="project__description">
+              <h3>Hollys</h3>
+              <span>Clone coding with HTML and CSS</span>
+            </div>
+          </a>
+          <a data-sort="front-end" href=" https://jspark9703.github.io/hansolpaper/" class="project" target="blank">
+            <img class="project__img" src="./images/projects/screencapture-jspark9703-github-io-hansolpaper-2020-10-30-20_30_46.png" alt="" />
+            <div class="project__description">
+              <h3>hansolpaper</h3>
+              <span>Clone coding with HTML and CSS</span>
+            </div>
+          </a>
+          <a data-sort="front-end" href="https://jspark9703.github.io/paiks_coffee/" class="project" target="blank">
+            <img class="project__img" src="./images/projects/screencapture-jspark9703-github-io-paiks-coffee-2020-10-30-20_35_26.png" alt="" />
+            <div class="project__description">
+              <h3>Paik's coffee</h3>
+              <span>Clone coding with HTML and CSS</span>
+            </div>
+          </a>
+          <a data-sort="front-end" href="https://github.com/ggstargame45/malf_application" class="project" target="blank">
+            <img class="project__img" src="./images/projects/스크린샷 2024-05-04 083151.png" alt="" />
+            <div class="project__description">
+              <h3>Malf</h3>
+              <span>front-end sub developer</span>
+            </div>
+          </a>
+          <a data-sort="front-end" href="https://github.com/jspark9703/gdsc_solution_project_front" class="project" target="blank">
+            <img class="project__img" src="./images/projects/스크린샷 2024-02-16 150837.png" alt="" />
+            <div class="project__description">
+              <h3>shopping guide dog(fe)</h3>
+              <span>online shopping for visually impaired made with flutter
+                              </span>
+            </div>
+          </a>
+          <a data-sort="back-end" href="https://github.com/jspark9703/gdsc_solution_project_back" class="project" target="blank">
+            <img class="project__img" src="./images/projects/스크린샷 2024-02-16 150837.png" alt="" />
+            <div class="project__description">
+              <h3>shopping guide dog(be)</h3>
+              <span>webcrolling, Fastapi, langchain, docker, GCP</span>
+            </div>
+          </a>
+          <a data-sort="ai" href="https://www.canva.com/design/DAF-6Zve4uI/6FO2XmsbOzh3ZRSxLyFZzw/view?utm_content=DAF-6Zve4uI&utm_campaign=designshare&utm_medium=link&utm_source=editor" class="project" target="blank">
+            <img class="project__img" src="./images/projects/스크린샷 2024-03-10 215757.png" alt="" />
+            <div class="project__description">
+              <h3>langchain</h3>
+              <span>prompt engineering</span>
+            </div>
+          </a>
+          <a data-sort="ai" href="https://github.com/jspark9703/topic_modeling_with_LDA_Openai" class="project" target="blank">
+            <img class="project__img" src="./images/projects/스크린샷 2024-05-04 081849.png" alt="" />
+            <div class="project__description">
+              <h3>topic modeling</h3>
+              <span>LDA, LangChain, openai api</span>
+            </div>
+          </a>
+          <a data-sort="front-end" href="https://github.com/jspark9703/fambal" class="project" target="blank">
+            <img class="project__img" src="./images/projects/스크린샷 2024-05-04 084648.png" alt="" />
+            <div class="project__description">
+              <h3>familly balance</h3>
+              <span>A balance game that the whole family can enjoy made with flutter, firebase </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- testimonials -->
+    <section id="testimonials" class="section">
+      <div class="section_container">
+        <h1>Testimonials</h1>
+        <h3>See what they say about me</h3>
+        <div class="testimonials">
+          <div class="testimonial">
+            <div class="testimonial__speechBubble">
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Necessitatibus labore quia dolorem ex corrupti deserunt
+                repudiandae unde incidunt perferendis exercitationem, dolor
+                excepturi quisquam recusandae neque ut earum velit impedit
+                officiis.
+              </p>
+              <p class="name"><a href="#">ellie</a>/sumsung</p>
+            </div>
+            <img
+              src="./images/tesimonial/people1-200515-154332.jpg"
+              alt="people"
+              class="testimonial__avata" />
+          </div>
+          <div class="testimonial">
+            <div class="testimonial__speechBubble">
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Necessitatibus labore quia dolorem ex corrupti deserunt
+                repudiandae unde incidunt perferendis exercitationem, dolor
+                excepturi quisquam recusandae neque ut earum velit impedit
+                officiis.
+              </p>
+              <p class="name"><a href="#">ellie</a>/sumsung</p>
+            </div>
+            <img
+              src="./images/tesimonial/people1-200515-154332.jpg"
+              alt="people"
+              class="testimonial__avata" />
+          </div>
+          <div class="testimonial">
+            <div class="testimonial__speechBubble">
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Necessitatibus labore quia dolorem ex corrupti deserunt
+                repudiandae unde incidunt perferendis exercitationem, dolor
+                excepturi quisquam recusandae neque ut earum velit impedit
+                officiis.
+              </p>
+              <p class="name"><a href="#">ellie</a>/sumsung</p>
+            </div>
+            <img
+              src="./images/tesimonial/people1-200515-154332.jpg"
+              alt="people"
+              class="testimonial__avata" />
+          </div>
+        </div>
+      </div>
+      <div>
+      </div>
+    </section>
+    <!-- contact -->
+    <section id="contact" class="section">
+      <h1 class="contact__title">Let's talk</h1>
+      <h2 class="contact__email">jspark9703@gmail.com</h2>
+      <div class="contact__links">
+        <a href="https://github.com/jspark9703" target="blank">
+          <i class="fa fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/jspark3115" target="blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+      <p class="contact__right">
+        copyright Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Perspiciatis, quae!
+      </p>
+    </section>
+    <a  class="add-testimonial" href="/write_testimonial.html">
+      <i class="fa-regular fa-comment"></i>
+    </div>
+    <div class="arrow-up">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </div>
+  </body>
+</html>
