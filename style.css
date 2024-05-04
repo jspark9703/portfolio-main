@@ -390,21 +390,21 @@ font-weight: bold;
   display: flex;
   margin: 32px;
 }
+.testimonials .testimonial:nth-child(odd) {
+  display: flex;
+  flex-direction: row-reverse;
+}
 .testimonial__avata {
   width: 150px;
   height: 150px;
   border-radius: 50%;
 }
-.testimonial__avata:nth-child(odd) {
-  margin-right: 40px;
-}
-.testimonial__avata:nth-child(even) {
-  margin-left: 40px;
-}
+
 .testimonial__speechBubble {
   padding: 18px;
   background-color: var(--color-white);
   border-radius: var(--size-border-radius);
+  margin: 0 20px;
 }
 .testimonial__speechBubble p {
   color: var(--color-light-grey);
