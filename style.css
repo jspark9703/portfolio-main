@@ -376,42 +376,89 @@ font-weight: bold;
 }
 
 /* testimonial */
-#testimonials {
-  background-color: var(--color-light-white);
-  overflow-y: auto; /* Add vertical scrollbar when content exceeds container height */
-    max-height: 800px; /* Set maximum height for the section */
-    position: relative; 
 
+
+
+/* Input field styling */
+.testimonial-input {
+  width: 60%;
+  padding: 10px;
+  margin: auto 20px;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  font-size: 1em;
+  box-sizing: border-box;
 }
-.testimonials {
-  margin: 40px;
-}
-.testimonial {
+
+/* Testimonials container styling */
+.testimonials-container {
   display: flex;
-  margin: 32px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
-.testimonials .testimonial:nth-child(odd) {
+
+/* Testimonial item styling */
+.testimonial-item {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: calc(50% - 20px);
+  box-sizing: border-box;
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-.testimonial__avata {
-  width: 150px;
-  height: 150px;
+
+.testimonial-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Button styling */
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
   border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
 }
 
-.testimonial__speechBubble {
-  padding: 18px;
-  background-color: var(--color-white);
-  border-radius: var(--size-border-radius);
-  margin: 0 20px;
+.delete-btn:hover {
+  background-color: #ff1a1a;
 }
-.testimonial__speechBubble p {
-  color: var(--color-light-grey);
+
+
+/* Button styling */
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
 }
-.testimonial__speechBubble a {
-  color: var(--color-pink);
+
+.delete-btn:hover {
+  background-color: #ff1a1a;
 }
+
 /* contact */
 #contact {
   background-color: var(--color-pink);
@@ -458,28 +505,7 @@ font-weight: bold;
   color: var(--color-white);
 }
 
-.add-testimonial {
-  position: fixed;
-  bottom: 20px;
-  right: 80px;
-  width: 50px;
-  height: 50px;
-  background-color: var(--color-dark-pink);
-  border-radius: 50%;
-  line-height: 55px;
-  text-align: center;
-  opacity: 0;
-  transition: all 500ms ease-in;
-  pointer-events: none;
-}
-.add-testimonial.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-.add-testimonial i {
-  font-size: 30px;
-  color: var(--color-white);
-}
+
 
 
 @media screen and (max-width: 768px) {
@@ -556,29 +582,5 @@ font-weight: bold;
     font-size: var(--font-micro);
   }
 
-  .testimonials {
-    margin: 0;
-  }
-  .testimonial {
-    flex-direction: column;
-  }
-  .testimonial .testimonial__avata {
-    width: 80px;
-    height: 80px;
-    margin: auto;
-    margin-bottom: 10px;
-  }
-  .category__btn {
-    width: 112px;
-    height: 25px;
-  }
-  .testimonial .testimonial__avata {
-    order: 1;
-    width: 80px;
-    height: 80px;
-  }
-  .testimonial .testimonial__speechBubble {
-    order: 2;
-    width: 100%;
-  }
+  
 }
