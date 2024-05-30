@@ -49,15 +49,7 @@ document.addEventListener("scroll", () => {
 arrowUpBtn.addEventListener("click", (event) => {
   window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
 });
-//add testimonial btn
-const addTestimonial = document.querySelector(".add-testimonial");
-document.addEventListener("scroll", () => {
-  if (window.scrollY > 20) {
-    addTestimonial.classList.add("show");
-  } else {
-    addTestimonial.classList.remove("show");
-  }
-});
+
 
 //filterring animation
 const categoryBtn = document.querySelector(".work__categories");
