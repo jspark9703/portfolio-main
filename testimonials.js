@@ -1,78 +1,92 @@
 const host = "http://127.0.0.1:8080";
-const todosContainer = document.querySelector(".testimonials-container");
- 
+const testimonialsContainer = document.querySelector(".testimonials-container");
 
-function getTodos() {
- axios.get(`${host}/testimonials`)
- .then(response => {
- console.log(response.data);
- renderTodos(response.data.todos);
- })
- .catch(error => {
- console.error('Error fetching todos:', error);
- });
- }
-
-
-
-function renderTodos(todos) {
-    todosContainer.innerHTML=''; // todosContainer 초기화
-   todos.forEach(todo=>{
-    const todoDiv=document.createElement('div');
-    todoDiv.classList.add('testimonial-item');
-    todoDiv.textContent=todo.item;
-    todosContainer.appendChild(todoDiv);
-    // 삭제버튼생성및이벤트처리
-   const deleteBtn=document.createElement('button');
-    deleteBtn.classList.add('delete-btn');
-    deleteBtn.textContent='x';
-    // todoDiv에삭제버튼추가
-    deleteBtn.addEventListener('click', function () {
-        deleteTodo(todo.id);
+// Function to fetch and render testimonials
+function getTestimonials() {
+    axios.get(`${host}/testimonials`)
+        .then(response => {
+            console.log(response.data);
+            renderTestimonials(response.data.todos); // Ensure this matches the FastAPI response structure
+        })
+        .catch(error => {
+            console.error('Error fetching testimonials:', error);
         });
-   todoDiv.appendChild(deleteBtn);
-   
+}
+
+// Function to render testimonials
+function renderTestimonials(testimonials) {
+    testimonialsContainer.innerHTML = ''; // Clear the container
+    testimonials.forEach(testimonial => {
+        const testimonialDiv = document.createElement('div');
+        testimonialDiv.classList.add('testimonial-item');
+        testimonialDiv.innerHTML = `
+            <div class="testimonial-content">
+                <p>${testimonial.text}</p>
+                <span class="testimonial-author">- ${testimonial.author}</span>
+                <span class="testimonial-date">${testimonial.date}</span>
+            </div>
+        `;
+        
+        // Create and append delete button
+        const deleteBtn = document.createElement('button');
+        deleteBtn.classList.add('delete-btn');
+        deleteBtn.textContent = 'x';
+        deleteBtn.addEventListener('click', function () {
+            deleteTestimonial(testimonial.id);
+        });
+        
+        testimonialDiv.appendChild(deleteBtn);
+        testimonialsContainer.appendChild(testimonialDiv);
     });
-    }
+}
 
-    window.addEventListener('DOMContentLoaded', function () {
-        getTodos();
-        });
+// Function to add a testimonial
+function addTestimonial() {
+    const testimonialInput = document.querySelector('.testimonial-input');
+    const authorInput = document.querySelector('.author-input');
+    const text = testimonialInput.value.trim();
+    const author = authorInput.value.trim();
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const date = `${year}-${month}-${day}`;
 
+    if (text === '' || author === '') return;
 
-        const todoInput = document.querySelector('.testimonial-input');
-        todoInput.addEventListener('keypress', function (event) {
-        if (event.key === 'Enter') {
-        addTodo();
-        }
-        });
+    let testimonialData = {
+        id: 0, // Assuming the backend assigns an ID
+        text: text,
+        date: date,
+        author: author
+    };
 
-        function addTodo() {
-            const title=todoInput.value.trim();
-            let todoData={
-            id:0,
-            item:title
-            };
-            if(title==='') return;
-            axios.post(`${host}/testimonials`, todoData)
-            .then(response=>{
-            todoInput.value='';
-            getTodos();
-            })
-            .catch(error=>{
+    axios.post(`${host}/testimonials`, testimonialData)
+        .then(response => {
+            testimonialInput.value = '';
+            authorInput.value = '';
+            getTestimonials();
+        })
+        .catch(error => {
             console.error('Error adding testimonial:', error);
-            });
-            }
+        });
+}
 
-            // 삭제 버튼 생성 및 이벤트 처리
+// Function to delete a testimonial
+function deleteTestimonial(testimonialId) {
+    axios.delete(`${host}/testimonial/${testimonialId}`) // Ensure the endpoint matches the FastAPI route
+        .then(function (response) {
+            console.log('Testimonial deleted:', response.data);
+            getTestimonials();
+        })
+        .catch(function (error) {
+            console.error('Error deleting testimonial:', error);
+        });
+}
 
-function deleteTodo(todoId) {
-                axios.delete(`${host}/testimonial/${todoId}`)
-                .then(function (response) {
-                console.log('Todo deleted:', response.data);
-                getTodos();
-                })
-                .catch(function (error) {
-                console.error('Error deleting testimonial:', error);
-                });
-                }
+// Ensure event listeners are added only once
+document.addEventListener('DOMContentLoaded', function () {
+    getTestimonials();
+});
+
+

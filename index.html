@@ -302,26 +302,44 @@
     </section>
     <!-- testimonials -->
     <section class="section">
-      <h1>testimonial</h1>
-      <input type="text" class="testimonial-input" placeholder="Add new testimonial">
-        <div class="testimonials-container">
-            <div class="testimonial-item">
-            123
-            <button class="delete-btn">x</button>
-            </div>
-            <div class="testimonial-item">
-            123
-            <button class="delete-btn">x</button>
-            </div>
-            <div class="testimonial-item">
-            123
-            <button class="testimonial-btn">x</button>
-            </div>
-            <div class="testimonial-item">
-            123
-            <button class="delete-btn">x</button>
-            </div>
-    </section>
+      <h1>Testimonial</h1>
+      <input type="text" class="testimonial-input" id="testimonial-input" placeholder="Add new testimonial">
+      <input type="text" class="author-input" id="author-input" placeholder="Author's name">
+      <button class="add-testimonial-btn" onclick="addTestimonial()">Add Testimonial</button>
+      <div class="testimonials-container" id="testimonials-container">
+          <div class="testimonial-item">
+              <div class="testimonial-content">
+                  <p>123</p>
+                  
+                  <span class="testimonial-author">- Author 1</span>
+                  <span class="testimonial-date">${testimonial.date}</span>
+
+                </div>
+              <button class="delete-btn">x</button>
+          </div>
+          <div class="testimonial-item">
+              <div class="testimonial-content">
+                  <p>123</p>
+                  <span class="testimonial-author">- Author 2</span>
+              </div>
+              <button class="delete-btn">x</button>
+          </div>
+          <div class="testimonial-item">
+              <div class="testimonial-content">
+                  <p>123</p>
+                  <span class="testimonial-author">- Author 3</span>
+              </div>
+              <button class="delete-btn">x</button>
+          </div>
+          <div class="testimonial-item">
+              <div class="testimonial-content">
+                  <p>123</p>
+                  <span class="testimonial-author">- Author 4</span>
+              </div>
+              <button class="delete-btn">x</button>
+          </div>
+      </div>
+  </section>
     
     <!-- contact -->
     <section id="contact" class="section">
