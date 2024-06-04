@@ -51,11 +51,12 @@ function addTestimonial() {
     const month = String(now.getMonth() + 1).padStart(2, '0');
     const day = String(now.getDate()).padStart(2, '0');
     const date = `${year}-${month}-${day}`;
-
+    
     if (text === '' || author === '') return;
+    const uniqueId = Math.floor(Date.now() / 1000);
 
     let testimonialData = {
-        id: 0, // Assuming the backend assigns an ID
+        id: uniqueId, // Assuming the backend assigns an ID
         text: text,
         date: date,
         author: author
